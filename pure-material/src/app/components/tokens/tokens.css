@@ -170,7 +170,8 @@ h1 .material-symbols-outlined {
     border-radius: 6px;
     font-size: 0.875rem;
     margin-bottom: 0.75rem;
-    font-family: 'Courier New', monospace;
+    margin-bottom: 0.75rem;
+    word-break: break-all;
     word-break: break-all;
 }
 
@@ -244,19 +245,6 @@ h1 .material-symbols-outlined {
 .usage-card pre {
     margin: 0;
     background-color: var(--mat-sys-surface-variant);
-    padding: 1rem;
-    border-radius: 8px;
-    overflow-x: auto;
-}
-
-.usage-card code {
-    font-family: 'Courier New', monospace;
-    font-size: 0.875rem;
-    color: var(--mat-sys-on-surface);
-    line-height: 1.6;
-}
-
-.usage-card ul {
     margin: 0;
     padding-left: 1.5rem;
     color: var(--mat-sys-on-surface);

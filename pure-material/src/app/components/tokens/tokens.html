@@ -30,13 +30,13 @@
       
       <div class="tokens-grid">
         @for (token of category.tokens; track token.variable) {
-          <div class="token-card" (click)="copyToClipboard(token.variable)">
+          <mat-card class="token-card" (click)="copyToClipboard(token.variable)" matRipple>
             <div class="color-preview" [style.background-color]="'var(' + token.variable + ')'">
               <div class="color-overlay" [style.color]="'var(' + token.variable + ')'">
                 <span class="material-symbols-outlined">content_copy</span>
               </div>
             </div>
-            <div class="token-info">
+            <mat-card-content class="token-info">
               <h3>{{ token.name }}</h3>
               <code>var({{ token.variable }})</code>
               @if (token.tone) {
@@ -46,8 +46,8 @@
                 </div>
               }
               <p>{{ token.description }}</p>
-            </div>
-          </div>
+            </mat-card-content>
+          </mat-card>
         }
       </div>
     </section>

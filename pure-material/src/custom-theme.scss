@@ -7,22 +7,42 @@
 // Definir paletas de color personalizadas
 $primary-palette: (
   0: #000000,
-  10: #001f2a,
-  20: #003544,
-  25: #004152,
-  30: #004d61,
-  35: #005a70,
-  40: #006780,
-  50: #0081a0,
-  60: #009cc1,
-  70: #3eb8dd,
-  80: #6dd3f7,
-  90: #b8eaff,
-  95: #ddf4ff,
+  10: #001419,
+  20: #002532,
+  25: #002C39,
+  30: #003340,
+  35: #003B4A,
+  40: #004254,
+  50: #006680,
+  60: #008CAF,
+  70: #00B5E0,
+  80: #7DD9FF,
+  90: #E0F4FF,
+  95: #F0FAFF,
   98: #f2fbff,
+  //sin cambiar
   99: #f9fdff,
+  //sin cambiar
   100: #ffffff,
 );
+
+/*
+$color-primary-50: #F0FAFF;
+$color-primary-100: #E0F4FF;
+$color-primary-200: #7DD9FF;
+$color-primary-300: #00B5E0;
+$color-primary-350: #00A1C8;
+$color-primary-400: #008CAF;
+$color-primary-450: #007998;
+$color-primary-500: #006680;
+$color-primary-550: #00546A;
+$color-primary-600: #004254;
+$color-primary-650: #003B4A;
+$color-primary-700: #003340;
+$color-primary-750: #002C39;
+$color-primary-800: #002532;
+$color-primary-900: #001419;
+*/
 
 $secondary-palette: (
   0: #000000,
@@ -127,16 +147,14 @@ html {
         secondary: $secondary-palette,
         tertiary: $tertiary-palette,
         error: $error-palette,
-        // neutral: $neutral-palette,
-        // neutral-variant: $neutral-variant-palette,
+        //neutral: $neutral-palette,
+        //neutral-variant: $neutral-variant-palette,
         theme-type: light,
+      ),
+      typography: (plain-family: 'Inter, sans-serif',
+        brand-family: 'Inter, sans-serif',
       )));
 
-  // Aplicación manual de variables de error para asegurar su visibilidad (Light)
-  --mat-sys-error: #{map.get($error-palette, 40)};
-  --mat-sys-on-error: #{map.get($error-palette, 100)};
-  --mat-sys-error-container: #{map.get($error-palette, 90)};
-  --mat-sys-on-error-container: #{map.get($error-palette, 10)};
 }
 
 html.dark-theme {
@@ -147,6 +165,9 @@ html.dark-theme {
         // neutral: $neutral-palette,
         // neutral-variant: $neutral-variant-palette,
         theme-type: dark,
+      ),
+      typography: (plain-family: 'Inter, sans-serif',
+        brand-family: 'Inter, sans-serif',
       )));
 
   // Aplicación manual de variables de error para asegurar su visibilidad (Dark)
@@ -159,6 +180,26 @@ html.dark-theme {
   --mat-sys-on-error: #{map.get($error-palette, 20)};
   --mat-sys-error-container: #{map.get($error-palette, 30)};
   --mat-sys-on-error-container: #{map.get($error-palette, 90)};
+
+  // Forzar colores de fondo para el tema oscuro
+  background-color: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
+
+  // Aplicación manual de variables de superficie y fondo (Dark)
+  // Surface -> Neutral 10 (Dark) vs 98 (Light)
+  // On Surface -> Neutral 90 (Dark) vs 10 (Light)
+  // Background -> Neutral 10 (Dark) vs 98 (Light)
+  // On Background -> Neutral 90 (Dark) vs 10 (Light)
+
+  --mat-sys-surface: #{map.get($neutral-palette, 10)};
+  --mat-sys-on-surface: #{map.get($neutral-palette, 90)};
+  --mat-sys-background: #{map.get($neutral-palette, 10)};
+  --mat-sys-on-background: #{map.get($neutral-palette, 90)};
+  --mat-sys-surface-container: #{map.get($neutral-palette, 12)}; // Aprox
+  --mat-sys-surface-variant: #{map.get($neutral-variant-palette, 30)};
+  --mat-sys-on-surface-variant: #{map.get($neutral-variant-palette, 80)};
+  --mat-sys-outline: #{map.get($neutral-variant-palette, 60)};
+  --mat-sys-outline-variant: #{map.get($neutral-variant-palette, 30)};
 }
 
 body {
@@ -167,8 +208,8 @@ body {
 
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
+  background-color: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
   font: var(--mat-sys-body-medium);
 
   // Reset the user agent margin
@@ -177,4 +218,6 @@ body {
 
 html.dark-theme body {
   color-scheme: dark;
+  background-color: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
 }

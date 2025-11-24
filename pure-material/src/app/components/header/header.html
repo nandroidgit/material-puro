@@ -1,5 +1,12 @@
 <mat-toolbar color="primary" class="app-header">
-  <span>Material Puro</span>
+  <h1>Material Puro</h1>
+  
+  <nav class="nav-links">
+    <button mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</button>
+    <button mat-button routerLink="/tokens" routerLinkActive="active-link">Tokens</button>
+    <button mat-button routerLink="/charts" routerLinkActive="active-link">Charts</button>
+  </nav>
+
   <span class="spacer"></span>
   <button mat-icon-button (click)="toggleTheme()" aria-label="Cambiar tema">
     <mat-icon>{{ isDarkTheme ? 'light_mode' : 'dark_mode' }}</mat-icon>
