@@ -1,0 +1,87 @@
+<div class="tokens-container">
+  <div class="header-section">
+    <h1>
+      <span class="material-symbols-outlined">palette</span>
+      Tokens de Color Material Design 3
+    </h1>
+    <a routerLink="/" class="back-button">
+      <span class="material-symbols-outlined">arrow_back</span>
+      Volver al Inicio
+    </a>
+  </div>
+
+  <div class="intro-section">
+    <p>
+      Material Design 3 utiliza un sistema de tokens de color semánticos que se adaptan automáticamente
+      a temas claros y oscuros. Cada token tiene un propósito específico en la interfaz.
+    </p>
+    <div class="info-badge">
+      <span class="material-symbols-outlined">info</span>
+      <span>Haz clic en cualquier token para copiar su variable CSS</span>
+    </div>
+  </div>
+
+  @for (category of colorCategories; track category.title) {
+    <section class="category-section">
+      <h2>
+        <span class="material-symbols-outlined">{{ category.icon }}</span>
+        {{ category.title }}
+      </h2>
+      
+      <div class="tokens-grid">
+        @for (token of category.tokens; track token.variable) {
+          <div class="token-card" (click)="copyToClipboard(token.variable)">
+            <div class="color-preview" [style.background-color]="'var(' + token.variable + ')'">
+              <div class="color-overlay" [style.color]="'var(' + token.variable + ')'">
+                <span class="material-symbols-outlined">content_copy</span>
+              </div>
+            </div>
+            <div class="token-info">
+              <h3>{{ token.name }}</h3>
+              <code>var({{ token.variable }})</code>
+              @if (token.tone) {
+                <div class="token-tone">
+                  <span class="material-symbols-outlined">palette</span>
+                  {{ token.tone }}
+                </div>
+              }
+              <p>{{ token.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+  }
+
+  <section class="usage-section">
+    <h2>
+      <span class="material-symbols-outlined">code</span>
+      Cómo Usar los Tokens
+    </h2>
+    <div class="usage-grid">
+      <div class="usage-card">
+        <h3>En CSS</h3>
+        <pre><code>.mi-elemento {{'{'}}{{'
+  '}}background-color: var(--mat-sys-primary);{{'
+  '}}color: var(--mat-sys-on-primary);{{'
+'}}{{'}'}}
+</code></pre>
+      </div>
+      <div class="usage-card">
+        <h3>En HTML Inline</h3>
+        <pre><code>&lt;div [style.background-color]="'var(--mat-sys-surface)'"&gt;
+  Contenido
+&lt;/div&gt;</code></pre>
+      </div>
+      <div class="usage-card">
+        <h3>Ventajas</h3>
+        <ul>
+          <li>✓ Consistencia visual</li>
+          <li>✓ Soporte automático de temas</li>
+          <li>✓ Accesibilidad garantizada</li>
+          <li>✓ Fácil mantenimiento</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>

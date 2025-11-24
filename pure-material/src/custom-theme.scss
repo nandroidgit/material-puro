@@ -1,0 +1,180 @@
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+// Definir paletas de color personalizadas
+$primary-palette: (
+  0: #000000,
+  10: #001f2a,
+  20: #003544,
+  25: #004152,
+  30: #004d61,
+  35: #005a70,
+  40: #006780,
+  50: #0081a0,
+  60: #009cc1,
+  70: #3eb8dd,
+  80: #6dd3f7,
+  90: #b8eaff,
+  95: #ddf4ff,
+  98: #f2fbff,
+  99: #f9fdff,
+  100: #ffffff,
+);
+
+$secondary-palette: (
+  0: #000000,
+  10: #0c1d29,
+  20: #21323e,
+  25: #2c3d49,
+  30: #374854,
+  35: #43545f,
+  40: #4f606b,
+  50: #677884,
+  60: #81929e,
+  70: #9bacb8,
+  80: #b6c7d3,
+  90: #d2e3ef,
+  95: #e0f1fd,
+  98: #f2fbff,
+  99: #f9fdff,
+  100: #ffffff,
+);
+
+$tertiary-palette: (
+  0: #000000,
+  10: #1e1a2d,
+  20: #332f43,
+  25: #3e3a4e,
+  30: #4a455a,
+  35: #555165,
+  40: #615d71,
+  50: #7a758b,
+  60: #948fa5,
+  70: #afa9c0,
+  80: #cac4db,
+  90: #e6dff7,
+  95: #f5edff,
+  98: #fdf8ff,
+  99: #fffbff,
+  100: #ffffff,
+);
+
+$error-palette: (
+  //Nuevo Red M3
+  0: #000000,
+  10: #410002,
+  20: #690005,
+  25: #7e0007,
+  30: #93000a,
+  35: #a80710,
+  40: #ba1a1a,
+  50: #de3730,
+  60: #ff5449,
+  70: #ff897d,
+  80: #ffb4ab,
+  90: #ffdad6,
+  95: #ffedea,
+  98: #fff8f7,
+  99: #fffbff,
+  100: #ffffff,
+);
+
+$neutral-palette: (
+  0: #000000,
+  10: #1a1c1e,
+  20: #2f3033,
+  25: #3a3b3e,
+  30: #45464a,
+  35: #515255,
+  40: #5d5e61,
+  50: #76777a,
+  60: #8f9093,
+  70: #aaabae,
+  80: #c6c6c9,
+  90: #e2e2e5,
+  95: #f0f0f3,
+  98: #f9f9fc,
+  99: #fcfcff,
+  100: #ffffff,
+);
+
+$neutral-variant-palette: (
+  0: #000000,
+  10: #161d21,
+  20: #2b3236,
+  25: #363d41,
+  30: #41484c,
+  35: #4d5458,
+  40: #596063,
+  50: #72787c,
+  60: #8b9296,
+  70: #a6acb0,
+  80: #c1c7cb,
+  90: #dde3e7,
+  95: #ebf1f5,
+  98: #f4fafe,
+  99: #f7fdff,
+  100: #ffffff,
+);
+
+@include mat.core();
+
+html {
+  @include mat.theme((color: (primary: $primary-palette,
+        secondary: $secondary-palette,
+        tertiary: $tertiary-palette,
+        error: $error-palette,
+        // neutral: $neutral-palette,
+        // neutral-variant: $neutral-variant-palette,
+        theme-type: light,
+      )));
+
+  // Aplicación manual de variables de error para asegurar su visibilidad (Light)
+  --mat-sys-error: #{map.get($error-palette, 40)};
+  --mat-sys-on-error: #{map.get($error-palette, 100)};
+  --mat-sys-error-container: #{map.get($error-palette, 90)};
+  --mat-sys-on-error-container: #{map.get($error-palette, 10)};
+}
+
+html.dark-theme {
+  @include mat.theme((color: (primary: $primary-palette,
+        secondary: $secondary-palette,
+        tertiary: $tertiary-palette,
+        error: $error-palette,
+        // neutral: $neutral-palette,
+        // neutral-variant: $neutral-variant-palette,
+        theme-type: dark,
+      )));
+
+  // Aplicación manual de variables de error para asegurar su visibilidad (Dark)
+  // En dark mode, los roles se invierten típicamente:
+  // error -> 80
+  // on-error -> 20
+  // error-container -> 30
+  // on-error-container -> 90
+  --mat-sys-error: #{map.get($error-palette, 80)};
+  --mat-sys-on-error: #{map.get($error-palette, 20)};
+  --mat-sys-error-container: #{map.get($error-palette, 30)};
+  --mat-sys-on-error-container: #{map.get($error-palette, 90)};
+}
+
+body {
+  // Default the application to a light color theme
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin
+  margin: 0;
+}
+
+html.dark-theme body {
+  color-scheme: dark;
+}

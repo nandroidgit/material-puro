@@ -1,0 +1,173 @@
+.demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-bottom: 4rem;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+    color: var(--mat-sys-primary);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+h2 {
+    color: var(--mat-sys-on-surface);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+
+.icons-section {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background-color: var(--mat-sys-surface-container);
+    border-radius: 12px;
+}
+
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--mat-sys-surface);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-item:hover {
+    background-color: var(--mat-sys-surface-variant);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-item span {
+    font-size: 48px;
+    color: var(--mat-sys-primary);
+}
+
+.icon-item p {
+    font-size: 0.875rem;
+    color: var(--mat-sys-on-surface-variant);
+    text-align: center;
+    margin: 0;
+}
+
+.material-components {
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--mat-sys-primary-container) 0%, var(--mat-sys-tertiary-container) 100%);
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.material-components h2 {
+    color: var(--mat-sys-on-primary-container);
+    margin-top: 0;
+}
+
+.material-components p {
+    color: var(--mat-sys-on-primary-container);
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+.material-components .info {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.material-components a {
+    color: var(--mat-sys-primary);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid var(--mat-sys-primary);
+    transition: border-color 0.3s ease;
+}
+
+.material-components a:hover {
+    border-bottom-color: var(--mat-sys-tertiary);
+}
+
+/* Sección de navegación */
+.navigation-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--mat-sys-surface-container);
+    border-radius: 12px;
+}
+
+.navigation-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0;
+    color: var(--mat-sys-on-surface);
+}
+
+.navigation-section h2 .material-symbols-outlined {
+    font-size: 2.5rem;
+    color: var(--mat-sys-primary);
+}
+
+.nav-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.nav-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--mat-sys-primary) 0%, var(--mat-sys-tertiary) 100%);
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.nav-card .material-symbols-outlined {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.nav-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+}
+
+.nav-card p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.nav-card.tokens-card {
+    background: linear-gradient(135deg, var(--mat-sys-secondary) 0%, var(--mat-sys-tertiary) 100%);
+}
