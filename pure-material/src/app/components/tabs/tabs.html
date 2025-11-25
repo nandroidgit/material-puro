@@ -1,0 +1,110 @@
+<div class="tabs-container">
+  <div class="header-section">
+    <h1>
+      <mat-icon>tab</mat-icon>
+      Material Tabs
+    </h1>
+    <button mat-flat-button color="primary" routerLink="/">
+      <mat-icon>arrow_back</mat-icon>
+      Inicio
+    </button>
+  </div>
+
+  <section class="tab-section">
+    <h2>
+      <mat-icon>tabs</mat-icon>
+      Tabs Básicas
+    </h2>
+    <mat-tab-group>
+      @for (tab of tabs; track tab.label) {
+        <mat-tab [label]="tab.label">
+          <div class="tab-content">
+            <h3>{{ tab.title }}</h3>
+            <p>{{ tab.content }}</p>
+            @if (tab.items) {
+              <ul>
+                @for (item of tab.items; track item) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+            }
+          </div>
+        </mat-tab>
+      }
+    </mat-tab-group>
+  </section>
+
+  <section class="tab-section">
+    <h2>
+      <mat-icon>label</mat-icon>
+      Tabs con Iconos
+    </h2>
+    <mat-tab-group>
+      @for (tab of tabs; track tab.label) {
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="tab-icon">{{ tab.icon }}</mat-icon>
+            {{ tab.label }}
+          </ng-template>
+          <mat-card class="tab-card">
+            <mat-card-header>
+              <mat-card-title>{{ tab.title }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ tab.content }}</p>
+              @if (tab.items) {
+                <ul>
+                  @for (item of tab.items; track item) {
+                    <li>{{ item }}</li>
+                  }
+                </ul>
+              }
+            </mat-card-content>
+          </mat-card>
+        </mat-tab>
+      }
+    </mat-tab-group>
+  </section>
+
+  <section class="tab-section">
+    <h2>
+      <mat-icon>view_carousel</mat-icon>
+      Tabs con Color de Fondo
+    </h2>
+    <mat-tab-group backgroundColor="primary" color="accent">
+      @for (tab of tabs; track tab.label) {
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="tab-icon">{{ tab.icon }}</mat-icon>
+            {{ tab.label }}
+          </ng-template>
+          <div class="tab-content">
+            <h3>{{ tab.title }}</h3>
+            <p>{{ tab.content }}</p>
+          </div>
+        </mat-tab>
+      }
+    </mat-tab-group>
+  </section>
+
+  <section class="tab-section">
+    <h2>
+      <mat-icon>align_horizontal_left</mat-icon>
+      Tabs con Alineación Personalizada
+    </h2>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+      @for (tab of tabs.slice(0, 3); track tab.label) {
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="tab-icon">{{ tab.icon }}</mat-icon>
+            {{ tab.label }}
+          </ng-template>
+          <div class="tab-content">
+            <h3>{{ tab.title }}</h3>
+            <p>{{ tab.content }}</p>
+          </div>
+        </mat-tab>
+      }
+    </mat-tab-group>
+  </section>
+</div>

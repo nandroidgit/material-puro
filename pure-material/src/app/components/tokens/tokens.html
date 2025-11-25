@@ -4,10 +4,10 @@
       <span class="material-symbols-outlined">palette</span>
       Tokens de Color Material Design 3
     </h1>
-    <a routerLink="/" class="back-button">
-      <span class="material-symbols-outlined">arrow_back</span>
-      Volver al Inicio
-    </a>
+    <button mat-flat-button color="primary" routerLink="/" >
+      Inicio
+      <mat-icon>arrow_back</mat-icon>
+    </button>
   </div>
 
   <div class="intro-section">
@@ -21,12 +21,71 @@
     </div>
   </div>
 
+  <section class="palette-grid-section">
+    <h2>
+      <span class="material-symbols-outlined">palette</span>
+      Paleta Primary Completa
+    </h2>
+    <div class="palette-grid">
+      <div class="palette-color" style="background-color: var(--primary-0)">
+        <span class="tone-label">0</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-10)">
+        <span class="tone-label">10</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-20)">
+        <span class="tone-label">20</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-25)">
+        <span class="tone-label">25</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-30)">
+        <span class="tone-label">30</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-35)">
+        <span class="tone-label">35</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-40)">
+        <span class="tone-label">40</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-50)">
+        <span class="tone-label">50</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-60)">
+        <span class="tone-label">60</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-70)">
+        <span class="tone-label">70</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-80)">
+        <span class="tone-label">80</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-90)">
+        <span class="tone-label">90</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-95)">
+        <span class="tone-label">95</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-98)">
+        <span class="tone-label">98</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-99)">
+        <span class="tone-label">99</span>
+      </div>
+      <div class="palette-color" style="background-color: var(--primary-100)">
+        <span class="tone-label">100</span>
+      </div>
+    </div>
+  </section>
+
   @for (category of colorCategories; track category.title) {
     <section class="category-section">
       <h2>
         <span class="material-symbols-outlined">{{ category.icon }}</span>
         {{ category.title }}
       </h2>
+
+
       
       <div class="tokens-grid">
         @for (token of category.tokens; track token.variable) {
@@ -53,35 +112,4 @@
     </section>
   }
 
-  <section class="usage-section">
-    <h2>
-      <span class="material-symbols-outlined">code</span>
-      Cómo Usar los Tokens
-    </h2>
-    <div class="usage-grid">
-      <div class="usage-card">
-        <h3>En CSS</h3>
-        <pre><code>.mi-elemento {{'{'}}{{'
-  '}}background-color: var(--mat-sys-primary);{{'
-  '}}color: var(--mat-sys-on-primary);{{'
-'}}{{'}'}}
-</code></pre>
-      </div>
-      <div class="usage-card">
-        <h3>En HTML Inline</h3>
-        <pre><code>&lt;div [style.background-color]="'var(--mat-sys-surface)'"&gt;
-  Contenido
-&lt;/div&gt;</code></pre>
-      </div>
-      <div class="usage-card">
-        <h3>Ventajas</h3>
-        <ul>
-          <li>✓ Consistencia visual</li>
-          <li>✓ Soporte automático de temas</li>
-          <li>✓ Accesibilidad garantizada</li>
-          <li>✓ Fácil mantenimiento</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 </div>

@@ -26,24 +26,6 @@ $primary-palette: (
   100: #ffffff,
 );
 
-/*
-$color-primary-50: #F0FAFF;
-$color-primary-100: #E0F4FF;
-$color-primary-200: #7DD9FF;
-$color-primary-300: #00B5E0;
-$color-primary-350: #00A1C8;
-$color-primary-400: #008CAF;
-$color-primary-450: #007998;
-$color-primary-500: #006680;
-$color-primary-550: #00546A;
-$color-primary-600: #004254;
-$color-primary-650: #003B4A;
-$color-primary-700: #003340;
-$color-primary-750: #002C39;
-$color-primary-800: #002532;
-$color-primary-900: #001419;
-*/
-
 $secondary-palette: (
   0: #000000,
   10: #0c1d29,
@@ -140,66 +122,69 @@ $neutral-variant-palette: (
   100: #ffffff,
 );
 
+:root {
+  // Variables CSS para las muestras de paleta primary
+  --primary-0: #{map.get($primary-palette, 0)};
+  --primary-10: #{map.get($primary-palette, 10)};
+  --primary-20: #{map.get($primary-palette, 20)};
+  --primary-25: #{map.get($primary-palette, 25)};
+  --primary-30: #{map.get($primary-palette, 30)};
+  --primary-35: #{map.get($primary-palette, 35)};
+  --primary-40: #{map.get($primary-palette, 40)};
+  --primary-50: #{map.get($primary-palette, 50)};
+  --primary-60: #{map.get($primary-palette, 60)};
+  --primary-70: #{map.get($primary-palette, 70)};
+  --primary-80: #{map.get($primary-palette, 80)};
+  --primary-90: #{map.get($primary-palette, 90)};
+  --primary-95: #{map.get($primary-palette, 95)};
+  --primary-98: #{map.get($primary-palette, 98)};
+  --primary-99: #{map.get($primary-palette, 99)};
+  --primary-100: #{map.get($primary-palette, 100)};
+}
+
 @include mat.core();
 
 html {
   @include mat.theme((color: (primary: $primary-palette,
-        secondary: $secondary-palette,
-        tertiary: $tertiary-palette,
-        error: $error-palette,
-        //neutral: $neutral-palette,
-        //neutral-variant: $neutral-variant-palette,
-        theme-type: light,
-      ),
-      typography: (plain-family: 'Inter, sans-serif',
-        brand-family: 'Inter, sans-serif',
-      )));
+    secondary: $secondary-palette,
+    tertiary: $tertiary-palette,
+    error: $error-palette,
+    neutral: $neutral-palette,
+    neutral-variant: $neutral-variant-palette,
+    theme-type: light,
+  ),
+  typography: (plain-family: 'Inter, sans-serif',
+    brand-family: 'Inter, sans-serif',
+  )));
+
+  // Sobrescribir el valor por defecto de primary (primary 40 -> 70, on primary 100 -> 10)
+  --mat-sys-primary: #{map.get($primary-palette, 70)};
+  --mat-sys-on-primary: #{map.get($primary-palette, 10)};
 
 }
 
 html.dark-theme {
   @include mat.theme((color: (primary: $primary-palette,
-        secondary: $secondary-palette,
-        tertiary: $tertiary-palette,
-        error: $error-palette,
-        // neutral: $neutral-palette,
-        // neutral-variant: $neutral-variant-palette,
-        theme-type: dark,
-      ),
-      typography: (plain-family: 'Inter, sans-serif',
-        brand-family: 'Inter, sans-serif',
-      )));
+    secondary: $secondary-palette,
+    tertiary: $tertiary-palette,
+    error: $error-palette,
+    neutral: $neutral-palette,
+    neutral-variant: $neutral-variant-palette,
+    theme-type: dark,
+  ),
+  typography: (plain-family: 'Inter, sans-serif',
+    brand-family: 'Inter, sans-serif',
+  )));
 
-  // Aplicación manual de variables de error para asegurar su visibilidad (Dark)
-  // En dark mode, los roles se invierten típicamente:
-  // error -> 80
-  // on-error -> 20
-  // error-container -> 30
-  // on-error-container -> 90
-  --mat-sys-error: #{map.get($error-palette, 80)};
-  --mat-sys-on-error: #{map.get($error-palette, 20)};
-  --mat-sys-error-container: #{map.get($error-palette, 30)};
-  --mat-sys-on-error-container: #{map.get($error-palette, 90)};
+
+  --mat-sys-primary: #{map.get($primary-palette, 35)};
+  --mat-sys-on-primary: #{map.get($primary-palette, 90)};
 
   // Forzar colores de fondo para el tema oscuro
   background-color: var(--mat-sys-background);
   color: var(--mat-sys-on-background);
 
-  // Aplicación manual de variables de superficie y fondo (Dark)
-  // Surface -> Neutral 10 (Dark) vs 98 (Light)
-  // On Surface -> Neutral 90 (Dark) vs 10 (Light)
-  // Background -> Neutral 10 (Dark) vs 98 (Light)
-  // On Background -> Neutral 90 (Dark) vs 10 (Light)
 
-  --mat-sys-surface: #{map.get($neutral-palette, 10)};
-  --mat-sys-on-surface: #{map.get($neutral-palette, 90)};
-  --mat-sys-background: #{map.get($neutral-palette, 10)};
-  --mat-sys-on-background: #{map.get($neutral-palette, 90)};
-  --mat-sys-surface-container: #{map.get($neutral-palette, 12)}; // Aprox
-  --mat-sys-surface-variant: #{map.get($neutral-variant-palette, 30)};
-  --mat-sys-on-surface-variant: #{map.get($neutral-variant-palette, 80)};
-  --mat-sys-outline: #{map.get($neutral-variant-palette, 60)};
-  --mat-sys-outline-variant: #{map.get($neutral-variant-palette, 30)};
 }
 
 body {

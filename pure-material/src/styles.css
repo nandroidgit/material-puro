@@ -24,3 +24,23 @@ body {
   text-rendering: optimizeLegibility;
   font-feature-settings: 'liga';
 }
+
+.mdc-button {
+  border-radius: 0!important;
+}
+
+.mdc-button>.mdc-button__label {
+  order: 1;
+}
+
+.mdc-button>.mat-icon {
+  order: 2;
+  margin-right: 0;
+  margin-left:var(--mat-button-filled-icon-spacing, 8px)
+}
+
+.mat-mdc-unelevated-button>.mat-icon {
+    margin-right: 0!important;
+    margin-left: 32px!important;
+}
+

@@ -1,0 +1,152 @@
+<div class="panels-container">
+  <div class="header-section">
+    <h1>
+      <mat-icon>view_agenda</mat-icon>
+      Accordion & Expansion Panels
+    </h1>
+    <button mat-flat-button color="primary" routerLink="/">
+      <mat-icon>arrow_back</mat-icon>
+      Inicio
+    </button>
+  </div>
+
+  <section class="panel-section">
+    <h2>
+      <mat-icon>expand_more</mat-icon>
+      Expansion Panel Simple
+    </h2>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Panel de Información Personal
+          </mat-panel-title>
+          <mat-panel-description>
+            Estado: {{panelOpenState ? 'Abierto' : 'Cerrado'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Aquí puedes colocar información personal del usuario.</p>
+        <p>Este panel se expande y colapsa con animaciones suaves.</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </section>
+
+  <section class="panel-section">
+    <h2>
+      <mat-icon>format_list_numbered</mat-icon>
+      Accordion Multi-Step
+    </h2>
+    <mat-accordion class="expansion-headers-align" multi>
+      <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Paso 1: Información Personal
+          </mat-panel-title>
+          <mat-panel-description>
+            Nombre y dirección
+            <mat-icon>account_circle</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-form-field>
+          <mat-label>Nombre completo</mat-label>
+          <input matInput placeholder="Ej. Juan Pérez">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Dirección</mat-label>
+          <input matInput placeholder="Ej. Calle Principal 123">
+        </mat-form-field>
+
+        <mat-action-row>
+          <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Paso 2: Destino
+          </mat-panel-title>
+          <mat-panel-description>
+            Información del destino
+            <mat-icon>map</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-form-field>
+          <mat-label>País</mat-label>
+          <input matInput placeholder="Ej. España">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Ciudad</mat-label>
+          <input matInput placeholder="Ej. Madrid">
+        </mat-form-field>
+
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+          <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Paso 3: Confirmación
+          </mat-panel-title>
+          <mat-panel-description>
+            Revisa y confirma
+            <mat-icon>done</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <p>Has completado todos los pasos. Por favor revisa la información antes de continuar.</p>
+
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+          <button mat-button color="primary">Confirmar</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </section>
+
+  <section class="panel-section">
+    <h2>
+      <mat-icon>layers</mat-icon>
+      Accordion con Múltiples Paneles y Subpaneles
+    </h2>
+    <mat-accordion multi>
+      @for (panel of panels; track panel.title) {
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ panel.title }}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ panel.description }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          
+          <p>{{ panel.content }}</p>
+          
+          @if (panel.subPanels && panel.subPanels.length > 0) {
+            <mat-accordion class="nested-accordion" multi>
+              @for (subPanel of panel.subPanels; track subPanel.title) {
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <mat-icon>chevron_right</mat-icon>
+                      {{ subPanel.title }}
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <p>{{ subPanel.content }}</p>
+                </mat-expansion-panel>
+              }
+            </mat-accordion>
+          }
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+  </section>
+</div>

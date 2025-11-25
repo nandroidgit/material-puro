@@ -3,6 +3,8 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIcon } from "@angular/material/icon";
 
 interface ColorToken {
   name: string;
@@ -20,7 +22,7 @@ interface ColorCategory {
 @Component({
   selector: 'app-tokens',
   standalone: true,
-  imports: [RouterLink, CommonModule, MatCardModule, MatRippleModule],
+  imports: [RouterLink, CommonModule, MatCardModule, MatRippleModule, MatButtonModule, MatIcon],
   templateUrl: './tokens.html',
   styleUrl: './tokens.css'
 })
@@ -30,8 +32,8 @@ export class TokensComponent {
       title: 'Colores Primarios',
       icon: 'palette',
       tokens: [
-        { name: 'Primary', variable: '--mat-sys-primary', description: 'Color principal de la marca', tone: 'Primary 40' },
-        { name: 'On Primary', variable: '--mat-sys-on-primary', description: 'Texto/iconos sobre primary', tone: 'Primary 100' },
+        { name: 'Primary', variable: '--mat-sys-primary', description: 'Color principal de la marca', tone: 'Primary 40. Cambiado a 60!!' },
+        { name: 'On Primary', variable: '--mat-sys-on-primary', description: 'Texto/iconos sobre primary', tone: 'Primary 100, Cambiado a 10!!' },
         { name: 'Primary Container', variable: '--mat-sys-primary-container', description: 'Contenedor con color primario', tone: 'Primary 90' },
         { name: 'On Primary Container', variable: '--mat-sys-on-primary-container', description: 'Texto/iconos sobre primary container', tone: 'Primary 10' },
         { name: 'Primary Fixed', variable: '--mat-sys-primary-fixed', description: 'Primary fijo (no cambia con tema)', tone: 'Primary 90' },
