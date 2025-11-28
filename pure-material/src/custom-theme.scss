@@ -150,7 +150,8 @@ body {
   margin: 0;
 }
 
-html.dark-theme body {
+html.dark-theme body,
+html.dark-theme h1 {
   color-scheme: dark;
   background-color: var(--mat-sys-background);
   color: var(--mat-sys-on-background);

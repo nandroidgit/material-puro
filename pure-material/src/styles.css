@@ -64,8 +64,13 @@ body {
 /* Tema claro - SECONDARY */
 .mat-mdc-unelevated-button[color="secondary"],
 .mat-mdc-raised-button[color="secondary"] {
-  background-color: var(--mat-sys-secondary);
+  background-color: var(--secondary-60)!important;
   color: var(--mat-sys-on-secondary);
+}
+
+.mat-mdc-unelevated-button[color="secondary"]:hover,
+.mat-mdc-raised-button[color="secondary"]:hover {
+  background-color: var(--secondary-65)!important;
 }
 
 .mat-mdc-outlined-button[color="secondary"] {
@@ -82,24 +87,24 @@ body {
 /* Tema oscuro - SECONDARY */
 .dark-theme .mat-mdc-unelevated-button[color="secondary"],
 .dark-theme .mat-mdc-raised-button[color="secondary"] {
-  background-color: var(--secondary-40);
+  background-color: var(--secondary-40)!important;
 }
 
 .dark-theme .mat-mdc-unelevated-button[color="secondary"]:hover,
 .dark-theme .mat-mdc-raised-button[color="secondary"]:hover {
-  background-color: var(--secondary-50);
+  background-color: var(--secondary-50)!important;
 }
 
 /* Tema claro - TERTIARY */
 .mat-mdc-unelevated-button[color="tertiary"],
 .mat-mdc-raised-button[color="tertiary"] {
-  background-color: var(--tertiary-60);
+  background-color: var(--tertiary-60)!important;
   color: var(--mat-sys-on-tertiary);
 }
 
 .mat-mdc-unelevated-button[color="tertiary"]:hover,
 .mat-mdc-raised-button[color="tertiary"]:hover {
-  background-color: var(--tertiary-65);
+  background-color: var(--tertiary-65)!important;
 }
 
 .mat-mdc-outlined-button[color="tertiary"] {
@@ -116,12 +121,12 @@ body {
 /* Tema oscuro - TERTIARY */
 .dark-theme .mat-mdc-unelevated-button[color="tertiary"],
 .dark-theme .mat-mdc-raised-button[color="tertiary"] {
-  background-color: var(--tertiary-40);
+  background-color: var(--tertiary-40)!important;
 }
 
 .dark-theme .mat-mdc-unelevated-button[color="tertiary"]:hover,
 .dark-theme .mat-mdc-raised-button[color="tertiary"]:hover {
-  background-color: var(--tertiary-50);
+  background-color: var(--tertiary-50)!important;
 }
 
 /* En tema oscuro - texto blanco en todos los botones */
