@@ -28,30 +28,6 @@ h1 .material-symbols-outlined {
     color: var(--mat-sys-primary);
 }
 
-.back-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--mat-sys-primary);
-    color: white;
-    text-decoration: none;
-    border-radius: 24px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.back-button:hover {
-    background-color: var(--mat-sys-tertiary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.back-button .material-symbols-outlined {
-    font-size: 1.5rem;
-}
-
 .intro-section {
     background: linear-gradient(135deg, var(--mat-sys-primary-container) 0%, var(--mat-sys-tertiary-container) 100%);
     padding: 2rem;
@@ -83,10 +59,9 @@ h1 .material-symbols-outlined {
 }
 
 .palette-grid-section {
-    margin-bottom: 3rem;
     background-color: var(--mat-sys-surface-container);
-    padding: 2rem;
-    border-radius: 16px;
+    border-radius: 0;
+    margin-top: 1rem;
 }
 
 .palette-grid-section h2 {
@@ -104,14 +79,17 @@ h1 .material-symbols-outlined {
     color: var(--mat-sys-primary);
 }
 
-.palette-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 1rem;
+mat-grid-list {
+    margin-top: 1.5rem;
+}
+
+mat-grid-tile {
+    overflow: visible !important;
 }
 
 .palette-color {
-    aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -119,7 +97,6 @@ h1 .material-symbols-outlined {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
 }
 
 .palette-color:hover {
@@ -223,8 +200,6 @@ h1 .material-symbols-outlined {
     border-radius: 6px;
     font-size: 0.875rem;
     margin-bottom: 0.75rem;
-    margin-bottom: 0.75rem;
-    word-break: break-all;
     word-break: break-all;
 }
 
@@ -296,11 +271,10 @@ h1 .material-symbols-outlined {
 }
 
 .usage-card pre {
-    margin: 0;
     background-color: var(--mat-sys-surface-variant);
-    margin: 0;
     padding-left: 1.5rem;
     color: var(--mat-sys-on-surface);
+    margin: 0;
 }
 
 .usage-card li {

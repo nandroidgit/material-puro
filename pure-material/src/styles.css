@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'color-palettes.scss';
 
 html,
 body {
@@ -36,7 +37,6 @@ body {
 .mdc-button>.mat-icon {
   order: 2;
   margin-right: 0;
-  margin-left:var(--mat-button-filled-icon-spacing, 8px)
 }
 
 .mat-mdc-unelevated-button>.mat-icon {
@@ -44,3 +44,39 @@ body {
     margin-left: 32px!important;
 }
 
+/* Soporte para color="secondary" usando Tokens CSS de M3 */
+.mat-mdc-unelevated-button[color="secondary"],
+.mat-mdc-raised-button[color="secondary"] {
+  background-color: var(--mat-sys-secondary) !important;
+  color: var(--mat-sys-on-secondary) !important;
+}
+
+.mat-mdc-unelevated-button[color="tertiary"],
+.mat-mdc-raised-button[color="tertiary"] {
+  background-color: var(--mat-sys-tertiary) !important;
+  color: var(--mat-sys-on-tertiary) !important;
+}
+
+/* Para botones outlined con secondary/tertiary */
+.mat-mdc-outlined-button[color="secondary"] {
+  background-color: transparent !important;
+  color: var(--mat-sys-secondary) !important;
+  border-color: var(--mat-sys-secondary) !important;
+}
+
+.mat-mdc-outlined-button[color="tertiary"] {
+  background-color: transparent !important;
+  color: var(--mat-sys-tertiary) !important;
+  border-color: var(--mat-sys-tertiary) !important;
+}
+
+/* Para botones text con secondary/tertiary */
+.mat-mdc-button[color="secondary"] {
+  background-color: transparent !important;
+  color: var(--mat-sys-secondary) !important;
+}
+
+.mat-mdc-button[color="tertiary"] {
+  background-color: transparent !important;
+  color: var(--mat-sys-tertiary) !important;
+}

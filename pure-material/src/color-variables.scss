@@ -1,0 +1,190 @@
+// Definir paletas de color personalizadas
+@use 'sass:map';
+
+$primary-palette: (
+  0: #000000,
+  10: #001419,
+  20: #002532,
+  25: #002C39,
+  30: #003340,
+  35: #003B4A,
+  40: #004254,
+  50: #006680,
+  60: #008CAF,
+  70: #00B5E0,
+  80: #7DD9FF,
+  90: #E0F4FF,
+  95: #F0FAFF,
+  98: #f2fbff,
+  99: #f9fdff,
+  100: #ffffff,
+);
+
+$secondary-palette: (
+  0: #000000,
+  10: #0c1d29,
+  20: #21323e,
+  25: #2c3d49,
+  30: #374854,
+  35: #43545f,
+  40: #4f606b,
+  50: #677884,
+  60: #81929e,
+  70: #9bacb8,
+  80: #b6c7d3,
+  90: #d2e3ef,
+  95: #e0f1fd,
+  98: #f2fbff,
+  99: #f9fdff,
+  100: #ffffff,
+);
+
+$tertiary-palette: (
+  0: #000000,
+  5: #131619,
+  10: #13191f,
+  15: #151d27,
+  20: #15212d,
+  25: #162434,
+  30: #16273b,
+  35: #172b41,
+  40: #182f49,
+  45: #193350,
+  50: #193656,
+  55: #304a67,
+  60: #475e78,
+  65: #5e7288,
+  70: #75869a,
+  75: #8c9aaa,
+  80: #a3afbb,
+  85: #bac2cc,
+  90: #d1d7dd,
+  95: #e8ebee,
+  98: #fdf8ff,
+  99: #fffbff,
+  100: #ffffff,
+);
+
+
+
+
+$error-palette: (
+  0: #000000,
+  10: #410002,
+  20: #690005,
+  25: #7e0007,
+  30: #93000a,
+  35: #a80710,
+  40: #ba1a1a,
+  50: #de3730,
+  60: #ff5449,
+  70: #ff897d,
+  80: #ffb4ab,
+  90: #ffdad6,
+  95: #ffedea,
+  98: #fff8f7,
+  99: #fffbff,
+  100: #ffffff,
+);
+
+$neutral-palette: (
+  0: #000000,
+  10: #1a1c1e,
+  20: #2f3033,
+  25: #3a3b3e,
+  30: #45464a,
+  35: #515255,
+  40: #5d5e61,
+  50: #76777a,
+  60: #8f9093,
+  70: #aaabae,
+  80: #c6c6c9,
+  90: #e2e2e5,
+  95: #f0f0f3,
+  98: #f9f9fc,
+  99: #fcfcff,
+  100: #ffffff,
+);
+
+$neutral-variant-palette: (
+  0: #000000,
+  10: #161d21,
+  20: #2b3236,
+  25: #363d41,
+  30: #41484c,
+  35: #4d5458,
+  40: #596063,
+  50: #72787c,
+  60: #8b9296,
+  70: #a6acb0,
+  80: #c1c7cb,
+  90: #dde3e7,
+  95: #ebf1f5,
+  98: #f4fafe,
+  99: #f7fdff,
+  100: #ffffff,
+);
+
+// Exportar variables CSS para usar en HTML
+:root {
+  // Variables CSS para las muestras de paleta primary
+  --primary-0: #{map.get($primary-palette, 0)};
+  --primary-10: #{map.get($primary-palette, 10)};
+  --primary-20: #{map.get($primary-palette, 20)};
+  --primary-25: #{map.get($primary-palette, 25)};
+  --primary-30: #{map.get($primary-palette, 30)};
+  --primary-35: #{map.get($primary-palette, 35)};
+  --primary-40: #{map.get($primary-palette, 40)};
+  --primary-50: #{map.get($primary-palette, 50)};
+  --primary-60: #{map.get($primary-palette, 60)};
+  --primary-70: #{map.get($primary-palette, 70)};
+  --primary-80: #{map.get($primary-palette, 80)};
+  --primary-90: #{map.get($primary-palette, 90)};
+  --primary-95: #{map.get($primary-palette, 95)};
+  --primary-98: #{map.get($primary-palette, 98)};
+  --primary-99: #{map.get($primary-palette, 99)};
+  --primary-100: #{map.get($primary-palette, 100)};
+
+  // Variables CSS para las muestras de paleta secondary
+  --secondary-0: #{map.get($secondary-palette, 0)};
+  --secondary-10: #{map.get($secondary-palette, 10)};
+  --secondary-20: #{map.get($secondary-palette, 20)};
+  --secondary-25: #{map.get($secondary-palette, 25)};
+  --secondary-30: #{map.get($secondary-palette, 30)};
+  --secondary-35: #{map.get($secondary-palette, 35)};
+  --secondary-40: #{map.get($secondary-palette, 40)};
+  --secondary-50: #{map.get($secondary-palette, 50)};
+  --secondary-60: #{map.get($secondary-palette, 60)};
+  --secondary-70: #{map.get($secondary-palette, 70)};
+  --secondary-80: #{map.get($secondary-palette, 80)};
+  --secondary-90: #{map.get($secondary-palette, 90)};
+  --secondary-95: #{map.get($secondary-palette, 95)};
+  --secondary-98: #{map.get($secondary-palette, 98)};
+  --secondary-99: #{map.get($secondary-palette, 99)};
+  --secondary-100: #{map.get($secondary-palette, 100)};
+
+  // Variables CSS para las muestras de paleta tertiary
+  --tertiary-0: #{map.get($tertiary-palette, 0)};
+  --tertiary-5: #{map.get($tertiary-palette, 5)};
+  --tertiary-10: #{map.get($tertiary-palette, 10)};
+  --tertiary-15: #{map.get($tertiary-palette, 15)};
+  --tertiary-20: #{map.get($tertiary-palette, 20)};
+  --tertiary-25: #{map.get($tertiary-palette, 25)};
+  --tertiary-30: #{map.get($tertiary-palette, 30)};
+  --tertiary-35: #{map.get($tertiary-palette, 35)};
+  --tertiary-40: #{map.get($tertiary-palette, 40)};
+  --tertiary-45: #{map.get($tertiary-palette, 45)};
+  --tertiary-50: #{map.get($tertiary-palette, 50)};
+  --tertiary-55: #{map.get($tertiary-palette, 55)};
+  --tertiary-60: #{map.get($tertiary-palette, 60)};
+  --tertiary-65: #{map.get($tertiary-palette, 65)};
+  --tertiary-70: #{map.get($tertiary-palette, 70)};
+  --tertiary-75: #{map.get($tertiary-palette, 75)};
+  --tertiary-80: #{map.get($tertiary-palette, 80)};
+  --tertiary-85: #{map.get($tertiary-palette, 85)};
+  --tertiary-90: #{map.get($tertiary-palette, 90)};
+  --tertiary-95: #{map.get($tertiary-palette, 95)};
+  --tertiary-98: #{map.get($tertiary-palette, 98)};
+  --tertiary-99: #{map.get($tertiary-palette, 99)};
+  --tertiary-100: #{map.get($tertiary-palette, 100)};
+}

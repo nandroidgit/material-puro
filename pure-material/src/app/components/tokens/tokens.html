@@ -14,6 +14,8 @@
     <p>
       Material Design 3 utiliza un sistema de tokens de color semánticos que se adaptan automáticamente
       a temas claros y oscuros. Cada token tiene un propósito específico en la interfaz.
+
+      
     </p>
     <div class="info-badge">
       <span class="material-symbols-outlined">info</span>
@@ -26,56 +28,389 @@
       <span class="material-symbols-outlined">palette</span>
       Paleta Primary Completa
     </h2>
-    <div class="palette-grid">
-      <div class="palette-color" style="background-color: var(--primary-0)">
-        <span class="tone-label">0</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-10)">
-        <span class="tone-label">10</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-20)">
-        <span class="tone-label">20</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-25)">
-        <span class="tone-label">25</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-30)">
-        <span class="tone-label">30</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-35)">
-        <span class="tone-label">35</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-40)">
-        <span class="tone-label">40</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-50)">
-        <span class="tone-label">50</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-60)">
-        <span class="tone-label">60</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-70)">
-        <span class="tone-label">70</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-80)">
-        <span class="tone-label">80</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-90)">
-        <span class="tone-label">90</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-95)">
-        <span class="tone-label">95</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-98)">
-        <span class="tone-label">98</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-99)">
-        <span class="tone-label">99</span>
-      </div>
-      <div class="palette-color" style="background-color: var(--primary-100)">
-        <span class="tone-label">100</span>
-      </div>
-    </div>
+
+    <button mat-flat-button color="primary" routerLink="/" >
+      Primary
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+
+    <button mat-flat-button color="secondary" routerLink="/" >
+      Secondary
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+    
+    <button mat-flat-button color="tertiary" routerLink="/" >
+      Tertiary
+      <mat-icon>star</mat-icon>
+    </button>
+    
+    <mat-grid-list cols="24" rowHeight="80px" gutterSize="0px">
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-0)">
+          <span class="tone-label">0</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-5)">
+          <span class="tone-label">5</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-10)">
+          <span class="tone-label">10</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-15)">
+          <span class="tone-label">15</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-20)">
+          <span class="tone-label">20</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-25)">
+          <span class="tone-label">25</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-30)">
+          <span class="tone-label">30</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-35)">
+          <span class="tone-label">35</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-40)">
+          <span class="tone-label">40</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-45)">
+          <span class="tone-label">45</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-50)">
+          <span class="tone-label">50</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-55)">
+          <span class="tone-label">55</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-60)">
+          <span class="tone-label">60</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-65)">
+          <span class="tone-label">65</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-70)">
+          <span class="tone-label">70</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-75)">
+          <span class="tone-label">75</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-80)">
+          <span class="tone-label">80</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-85)">
+          <span class="tone-label">85</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-90)">
+          <span class="tone-label">90</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-95)">
+          <span class="tone-label">95</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-98)">
+          <span class="tone-label">98</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-99)">
+          <span class="tone-label">99</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--primary-100)">
+          <span class="tone-label">100</span>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </section>
+
+  <section class="palette-grid-section">
+    <h2>
+      <span class="material-symbols-outlined">color_lens</span>
+      Paleta Secondary Completa
+    </h2>
+    
+    <mat-grid-list cols="24" rowHeight="80px" gutterSize="0px">
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-0)">
+          <span class="tone-label">0</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-5)">
+          <span class="tone-label">5</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-10)">
+          <span class="tone-label">10</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-15)">
+          <span class="tone-label">15</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-20)">
+          <span class="tone-label">20</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-25)">
+          <span class="tone-label">25</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-30)">
+          <span class="tone-label">30</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-35)">
+          <span class="tone-label">35</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-40)">
+          <span class="tone-label">40</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-45)">
+          <span class="tone-label">45</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-50)">
+          <span class="tone-label">50</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-55)">
+          <span class="tone-label">55</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-60)">
+          <span class="tone-label">60</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-65)">
+          <span class="tone-label">65</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-70)">
+          <span class="tone-label">70</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-75)">
+          <span class="tone-label">75</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-80)">
+          <span class="tone-label">80</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-85)">
+          <span class="tone-label">85</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-90)">
+          <span class="tone-label">90</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-95)">
+          <span class="tone-label">95</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-98)">
+          <span class="tone-label">98</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-99)">
+          <span class="tone-label">99</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--secondary-100)">
+          <span class="tone-label">100</span>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </section>
+
+  <section class="palette-grid-section">
+    <h2>
+      <span class="material-symbols-outlined">gradient</span>
+      Paleta Tertiary Completa
+    </h2>
+    
+    <mat-grid-list cols="24" rowHeight="80px" gutterSize="0px">
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-0)">
+          <span class="tone-label">0</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-5)">
+          <span class="tone-label">5</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-10)">
+          <span class="tone-label">10</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-15)">
+          <span class="tone-label">15</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-20)">
+          <span class="tone-label">20</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-25)">
+          <span class="tone-label">25</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-30)">
+          <span class="tone-label">30</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-35)">
+          <span class="tone-label">35</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-40)">
+          <span class="tone-label">40</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-45)">
+          <span class="tone-label">45</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-50)">
+          <span class="tone-label">50</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-55)">
+          <span class="tone-label">55</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-60)">
+          <span class="tone-label">60</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-65)">
+          <span class="tone-label">65</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-70)">
+          <span class="tone-label">70</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-75)">
+          <span class="tone-label">75</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-80)">
+          <span class="tone-label">80</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-85)">
+          <span class="tone-label">85</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-90)">
+          <span class="tone-label">90</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-95)">
+          <span class="tone-label">95</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-98)">
+          <span class="tone-label">98</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-99)">
+          <span class="tone-label">99</span>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="palette-color" style="background-color: var(--tertiary-100)">
+          <span class="tone-label">100</span>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
   </section>
 
   @for (category of colorCategories; track category.title) {
@@ -84,8 +419,6 @@
         <span class="material-symbols-outlined">{{ category.icon }}</span>
         {{ category.title }}
       </h2>
-
-
       
       <div class="tokens-grid">
         @for (token of category.tokens; track token.variable) {

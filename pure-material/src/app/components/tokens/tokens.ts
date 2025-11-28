@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from "@angular/material/icon";
+import { MatGridListModule } from '@angular/material/grid-list';
 
 interface ColorToken {
   name: string;
@@ -22,7 +23,7 @@ interface ColorCategory {
 @Component({
   selector: 'app-tokens',
   standalone: true,
-  imports: [RouterLink, CommonModule, MatCardModule, MatRippleModule, MatButtonModule, MatIcon],
+  imports: [RouterLink, CommonModule, MatCardModule, MatRippleModule, MatButtonModule, MatIcon, MatGridListModule],
   templateUrl: './tokens.html',
   styleUrl: './tokens.css'
 })
@@ -36,10 +37,6 @@ export class TokensComponent {
         { name: 'On Primary', variable: '--mat-sys-on-primary', description: 'Texto/iconos sobre primary', tone: 'Primary 100, Cambiado a 10!!' },
         { name: 'Primary Container', variable: '--mat-sys-primary-container', description: 'Contenedor con color primario', tone: 'Primary 90' },
         { name: 'On Primary Container', variable: '--mat-sys-on-primary-container', description: 'Texto/iconos sobre primary container', tone: 'Primary 10' },
-        { name: 'Primary Fixed', variable: '--mat-sys-primary-fixed', description: 'Primary fijo (no cambia con tema)', tone: 'Primary 90' },
-        { name: 'Primary Fixed Dim', variable: '--mat-sys-primary-fixed-dim', description: 'Primary fijo atenuado', tone: 'Primary 80' },
-        { name: 'On Primary Fixed', variable: '--mat-sys-on-primary-fixed', description: 'Texto sobre primary fixed', tone: 'Primary 10' },
-        { name: 'On Primary Fixed Variant', variable: '--mat-sys-on-primary-fixed-variant', description: 'Variante de texto sobre primary fixed', tone: 'Primary 30' },
       ]
     },
     {
@@ -50,10 +47,6 @@ export class TokensComponent {
         { name: 'On Secondary', variable: '--mat-sys-on-secondary', description: 'Texto/iconos sobre secondary', tone: 'Secondary 100' },
         { name: 'Secondary Container', variable: '--mat-sys-secondary-container', description: 'Contenedor con color secundario', tone: 'Secondary 90' },
         { name: 'On Secondary Container', variable: '--mat-sys-on-secondary-container', description: 'Texto/iconos sobre secondary container', tone: 'Secondary 10' },
-        { name: 'Secondary Fixed', variable: '--mat-sys-secondary-fixed', description: 'Secondary fijo (no cambia con tema)', tone: 'Secondary 90' },
-        { name: 'Secondary Fixed Dim', variable: '--mat-sys-secondary-fixed-dim', description: 'Secondary fijo atenuado', tone: 'Secondary 80' },
-        { name: 'On Secondary Fixed', variable: '--mat-sys-on-secondary-fixed', description: 'Texto sobre secondary fixed', tone: 'Secondary 10' },
-        { name: 'On Secondary Fixed Variant', variable: '--mat-sys-on-secondary-fixed-variant', description: 'Variante de texto sobre secondary fixed', tone: 'Secondary 30' },
       ]
     },
     {
@@ -64,10 +57,6 @@ export class TokensComponent {
         { name: 'On Tertiary', variable: '--mat-sys-on-tertiary', description: 'Texto/iconos sobre tertiary', tone: 'Tertiary 100' },
         { name: 'Tertiary Container', variable: '--mat-sys-tertiary-container', description: 'Contenedor con color terciario', tone: 'Tertiary 90' },
         { name: 'On Tertiary Container', variable: '--mat-sys-on-tertiary-container', description: 'Texto/iconos sobre tertiary container', tone: 'Tertiary 10' },
-        { name: 'Tertiary Fixed', variable: '--mat-sys-tertiary-fixed', description: 'Tertiary fijo (no cambia con tema)', tone: 'Tertiary 90' },
-        { name: 'Tertiary Fixed Dim', variable: '--mat-sys-tertiary-fixed-dim', description: 'Tertiary fijo atenuado', tone: 'Tertiary 80' },
-        { name: 'On Tertiary Fixed', variable: '--mat-sys-on-tertiary-fixed', description: 'Texto sobre tertiary fixed', tone: 'Tertiary 10' },
-        { name: 'On Tertiary Fixed Variant', variable: '--mat-sys-on-tertiary-fixed-variant', description: 'Variante de texto sobre tertiary fixed', tone: 'Tertiary 30' },
       ]
     },
     {

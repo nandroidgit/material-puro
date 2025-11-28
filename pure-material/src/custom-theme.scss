@@ -3,187 +3,110 @@
 // components according to the Material 3 design spec.
 @use 'sass:map';
 @use '@angular/material' as mat;
-
-// Definir paletas de color personalizadas
-$primary-palette: (
-  0: #000000,
-  10: #001419,
-  20: #002532,
-  25: #002C39,
-  30: #003340,
-  35: #003B4A,
-  40: #004254,
-  50: #006680,
-  60: #008CAF,
-  70: #00B5E0,
-  80: #7DD9FF,
-  90: #E0F4FF,
-  95: #F0FAFF,
-  98: #f2fbff,
-  //sin cambiar
-  99: #f9fdff,
-  //sin cambiar
-  100: #ffffff,
-);
-
-$secondary-palette: (
-  0: #000000,
-  10: #0c1d29,
-  20: #21323e,
-  25: #2c3d49,
-  30: #374854,
-  35: #43545f,
-  40: #4f606b,
-  50: #677884,
-  60: #81929e,
-  70: #9bacb8,
-  80: #b6c7d3,
-  90: #d2e3ef,
-  95: #e0f1fd,
-  98: #f2fbff,
-  99: #f9fdff,
-  100: #ffffff,
-);
-
-$tertiary-palette: (
-  0: #000000,
-  10: #1e1a2d,
-  20: #332f43,
-  25: #3e3a4e,
-  30: #4a455a,
-  35: #555165,
-  40: #615d71,
-  50: #7a758b,
-  60: #948fa5,
-  70: #afa9c0,
-  80: #cac4db,
-  90: #e6dff7,
-  95: #f5edff,
-  98: #fdf8ff,
-  99: #fffbff,
-  100: #ffffff,
-);
-
-$error-palette: (
-  //Nuevo Red M3
-  0: #000000,
-  10: #410002,
-  20: #690005,
-  25: #7e0007,
-  30: #93000a,
-  35: #a80710,
-  40: #ba1a1a,
-  50: #de3730,
-  60: #ff5449,
-  70: #ff897d,
-  80: #ffb4ab,
-  90: #ffdad6,
-  95: #ffedea,
-  98: #fff8f7,
-  99: #fffbff,
-  100: #ffffff,
-);
-
-$neutral-palette: (
-  0: #000000,
-  10: #1a1c1e,
-  20: #2f3033,
-  25: #3a3b3e,
-  30: #45464a,
-  35: #515255,
-  40: #5d5e61,
-  50: #76777a,
-  60: #8f9093,
-  70: #aaabae,
-  80: #c6c6c9,
-  90: #e2e2e5,
-  95: #f0f0f3,
-  98: #f9f9fc,
-  99: #fcfcff,
-  100: #ffffff,
-);
-
-$neutral-variant-palette: (
-  0: #000000,
-  10: #161d21,
-  20: #2b3236,
-  25: #363d41,
-  30: #41484c,
-  35: #4d5458,
-  40: #596063,
-  50: #72787c,
-  60: #8b9296,
-  70: #a6acb0,
-  80: #c1c7cb,
-  90: #dde3e7,
-  95: #ebf1f5,
-  98: #f4fafe,
-  99: #f7fdff,
-  100: #ffffff,
-);
-
-:root {
-  // Variables CSS para las muestras de paleta primary
-  --primary-0: #{map.get($primary-palette, 0)};
-  --primary-10: #{map.get($primary-palette, 10)};
-  --primary-20: #{map.get($primary-palette, 20)};
-  --primary-25: #{map.get($primary-palette, 25)};
-  --primary-30: #{map.get($primary-palette, 30)};
-  --primary-35: #{map.get($primary-palette, 35)};
-  --primary-40: #{map.get($primary-palette, 40)};
-  --primary-50: #{map.get($primary-palette, 50)};
-  --primary-60: #{map.get($primary-palette, 60)};
-  --primary-70: #{map.get($primary-palette, 70)};
-  --primary-80: #{map.get($primary-palette, 80)};
-  --primary-90: #{map.get($primary-palette, 90)};
-  --primary-95: #{map.get($primary-palette, 95)};
-  --primary-98: #{map.get($primary-palette, 98)};
-  --primary-99: #{map.get($primary-palette, 99)};
-  --primary-100: #{map.get($primary-palette, 100)};
-}
+@use 'color-palettes' as colors;
 
 @include mat.core();
 
-html {
-  @include mat.theme((color: (primary: $primary-palette,
-    secondary: $secondary-palette,
-    tertiary: $tertiary-palette,
-    error: $error-palette,
-    neutral: $neutral-palette,
-    neutral-variant: $neutral-variant-palette,
+// Crear el tema con todas las paletas personalizadas
+$light-theme: (
+  color: (
+    primary: colors.$primary-palette,
+    secondary: colors.$secondary-palette,
+    tertiary: colors.$tertiary-palette,
+    error: colors.$error-palette,
+    neutral: colors.$neutral-palette,
+    neutral-variant: colors.$neutral-variant-palette,
     theme-type: light,
   ),
-  typography: (plain-family: 'Inter, sans-serif',
+  typography: (
+    plain-family: 'Inter, sans-serif',
     brand-family: 'Inter, sans-serif',
-  )));
+  )
+);
 
-  // Sobrescribir el valor por defecto de primary (primary 40 -> 70, on primary 100 -> 10)
-  --mat-sys-primary: #{map.get($primary-palette, 70)};
-  --mat-sys-on-primary: #{map.get($primary-palette, 10)};
+$dark-theme: (
+  color: (
+    primary: colors.$primary-palette,
+    secondary: colors.$secondary-palette,
+    tertiary: colors.$tertiary-palette,
+    error: colors.$error-palette,
+    neutral: colors.$neutral-palette,
+    neutral-variant: colors.$neutral-variant-palette,
+    theme-type: dark,
+  ),
+  typography: (
+    plain-family: 'Inter, sans-serif',
+    brand-family: 'Inter, sans-serif',
+  )
+);
+
+html {
+  // Generar TODAS las variables CSS del sistema de Material 3
+  @include mat.theme($light-theme);
+  
+  // Aplicar estilos base del core theme - genera TODAS las variables!!
+  @include mat.core-theme($light-theme);
+
+  // PRIMARY - Sobrescribir el valor por defecto (40 -> 70, 100 -> 10)
+  --mat-sys-primary: #{map.get(colors.$primary-palette, 70)};
+  --mat-sys-on-primary: #{map.get(colors.$primary-palette, 10)};
+  --mat-sys-primary-container: #{map.get(colors.$primary-palette, 90)};
+  --mat-sys-on-primary-container: #{map.get(colors.$primary-palette, 10)};
+  
+  // SECONDARY - Definir manualmente toda la paleta
+  --mat-sys-secondary: #{map.get(colors.$secondary-palette, 70)};
+  --mat-sys-on-secondary: #{map.get(colors.$secondary-palette, 10)};
+  --mat-sys-secondary-container: #{map.get(colors.$secondary-palette, 90)};
+  --mat-sys-on-secondary-container: #{map.get(colors.$secondary-palette, 10)};
+  
+  // TERTIARY - Definir manualmente toda la paleta
+  --mat-sys-tertiary: #{map.get(colors.$tertiary-palette, 40)};
+  --mat-sys-on-tertiary: #{map.get(colors.$tertiary-palette, 100)};
+  --mat-sys-tertiary-container: #{map.get(colors.$tertiary-palette, 90)};
+  --mat-sys-on-tertiary-container: #{map.get(colors.$tertiary-palette, 10)};
+  
+  // ERROR - Definir manualmente toda la paleta
+  --mat-sys-error: #{map.get(colors.$error-palette, 40)};
+  --mat-sys-on-error: #{map.get(colors.$error-palette, 100)};
+  --mat-sys-error-container: #{map.get(colors.$error-palette, 90)};
+  --mat-sys-on-error-container: #{map.get(colors.$error-palette, 10)};
 
 }
 
 html.dark-theme {
-  @include mat.theme((color: (primary: $primary-palette,
-    secondary: $secondary-palette,
-    tertiary: $tertiary-palette,
-    error: $error-palette,
-    neutral: $neutral-palette,
-    neutral-variant: $neutral-variant-palette,
-    theme-type: dark,
-  ),
-  typography: (plain-family: 'Inter, sans-serif',
-    brand-family: 'Inter, sans-serif',
-  )));
+  // Generar TODAS las variables CSS del sistema para dark
+  @include mat.theme($dark-theme);
+  
+  // Aplicar estilos base del core theme para dark
+  @include mat.core-theme($dark-theme);
 
-
-  --mat-sys-primary: #{map.get($primary-palette, 35)};
-  --mat-sys-on-primary: #{map.get($primary-palette, 90)};
+  // PRIMARY para tema oscuro
+  --mat-sys-primary: #{map.get(colors.$primary-palette, 80)};
+  --mat-sys-on-primary: #{map.get(colors.$primary-palette, 20)};
+  --mat-sys-primary-container: #{map.get(colors.$primary-palette, 30)};
+  --mat-sys-on-primary-container: #{map.get(colors.$primary-palette, 90)};
+  
+  // SECONDARY para tema oscuro
+  --mat-sys-secondary: #{map.get(colors.$secondary-palette, 80)};
+  --mat-sys-on-secondary: #{map.get(colors.$secondary-palette, 20)};
+  --mat-sys-secondary-container: #{map.get(colors.$secondary-palette, 30)};
+  --mat-sys-on-secondary-container: #{map.get(colors.$secondary-palette, 90)};
+  
+  // TERTIARY para tema oscuro
+  --mat-sys-tertiary: #{map.get(colors.$tertiary-palette, 80)};
+  --mat-sys-on-tertiary: #{map.get(colors.$tertiary-palette, 20)};
+  --mat-sys-tertiary-container: #{map.get(colors.$tertiary-palette, 30)};
+  --mat-sys-on-tertiary-container: #{map.get(colors.$tertiary-palette, 90)};
+  
+  // ERROR para tema oscuro
+  --mat-sys-error: #{map.get(colors.$error-palette, 80)};
+  --mat-sys-on-error: #{map.get(colors.$error-palette, 20)};
+  --mat-sys-error-container: #{map.get(colors.$error-palette, 30)};
+  --mat-sys-on-error-container: #{map.get(colors.$error-palette, 90)};
 
   // Forzar colores de fondo para el tema oscuro
   background-color: var(--mat-sys-background);
   color: var(--mat-sys-on-background);
-
 
 }
 
