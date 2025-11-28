@@ -29,10 +29,15 @@ $primary-palette: (
 
 $secondary-palette: (
     0: #000000,
+    4: #0A0A08,
     5: #10100E,
+    6: #14140F,
     10: #20201D,
+    12: #262623,
     15: #30302C, 
+    17: #36363A,
     20: #3F3F3A,
+    22: #46464E,
     25: #52524A, 
     30: #646459,
     35: #6C6C62,
@@ -165,10 +170,15 @@ $neutral-variant-palette: (
 
   // Variables CSS para las muestras de paleta secondary
   --secondary-0: #{map.get($secondary-palette, 0)};
+  --secondary-4: #{map.get($secondary-palette, 4)};
   --secondary-5: #{map.get($secondary-palette, 5)};
+  --secondary-6: #{map.get($secondary-palette, 6)};
   --secondary-10: #{map.get($secondary-palette, 10)};
+  --secondary-12: #{map.get($secondary-palette, 12)};
   --secondary-15: #{map.get($secondary-palette, 15)};
+  --secondary-17: #{map.get($secondary-palette, 17)};
   --secondary-20: #{map.get($secondary-palette, 20)};
+  --secondary-22: #{map.get($secondary-palette, 22)};
   --secondary-25: #{map.get($secondary-palette, 25)};
   --secondary-30: #{map.get($secondary-palette, 30)};
   --secondary-35: #{map.get($secondary-palette, 35)};
@@ -212,4 +222,47 @@ $neutral-variant-palette: (
   --tertiary-98: #{map.get($tertiary-palette, 98)};
   --tertiary-99: #{map.get($tertiary-palette, 99)};
   --tertiary-100: #{map.get($tertiary-palette, 100)};
+
+  // Variables CSS para las muestras de paleta error
+  --error-0: #{map.get($error-palette, 0)};
+  --error-10: #{map.get($error-palette, 10)};
+  --error-20: #{map.get($error-palette, 20)};
+  --error-25: #{map.get($error-palette, 25)};
+  --error-30: #{map.get($error-palette, 30)};
+  --error-35: #{map.get($error-palette, 35)};
+  --error-40: #{map.get($error-palette, 40)};
+  --error-50: #{map.get($error-palette, 50)};
+  --error-60: #{map.get($error-palette, 60)};
+  --error-70: #{map.get($error-palette, 70)};
+  --error-80: #{map.get($error-palette, 80)};
+  --error-90: #{map.get($error-palette, 90)};
+  --error-95: #{map.get($error-palette, 95)};
+  --error-98: #{map.get($error-palette, 98)};
+  --error-99: #{map.get($error-palette, 99)};
+  --error-100: #{map.get($error-palette, 100)};
+
+  // Variables CSS para la paleta Surface (alias de Secondary)
+  --surface-0: var(--secondary-0);
+  --surface-5: var(--secondary-5);
+  --surface-10: var(--secondary-10);
+  --surface-15: var(--secondary-15);
+  --surface-20: var(--secondary-20);
+  --surface-25: var(--secondary-25);
+  --surface-30: var(--secondary-30);
+  --surface-35: var(--secondary-35);
+  --surface-40: var(--secondary-40);
+  --surface-45: var(--secondary-45);
+  --surface-50: var(--secondary-50);
+  --surface-55: var(--secondary-55);
+  --surface-60: var(--secondary-60);
+  --surface-65: var(--secondary-65);
+  --surface-70: var(--secondary-70);
+  --surface-75: var(--secondary-75);
+  --surface-80: var(--secondary-80);
+  --surface-85: var(--secondary-85);
+  --surface-90: var(--secondary-90);
+  --surface-95: var(--secondary-95);
+  --surface-98: var(--secondary-98);
+  --surface-99: var(--secondary-99);
+  --surface-100: var(--secondary-100);
 }

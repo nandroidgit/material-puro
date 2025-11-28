@@ -31,52 +31,112 @@ body {
 }
 
 .mdc-button>.mdc-button__label {
-  order: 1;
+  order: 1 !important;
 }
 
 .mdc-button>.mat-icon {
-  order: 2;
-  margin-right: 0;
+  order: 2 !important;
+  margin-right: 0 !important;
 }
 
 .mat-mdc-unelevated-button>.mat-icon {
-    margin-right: 0!important;
-    margin-left: 32px!important;
+    margin-right: 0 !important;
+    margin-left: 32px !important;
 }
 
-/* Soporte para color="secondary" usando Tokens CSS de M3 */
+/* Tema claro - PRIMARY */
+.mat-mdc-unelevated-button[color="primary"]:hover,
+.mat-mdc-raised-button[color="primary"]:hover {
+  background-color: var(--primary-65);
+}
+
+/* Tema oscuro - PRIMARY */
+.dark-theme .mat-mdc-unelevated-button[color="primary"],
+.dark-theme .mat-mdc-raised-button[color="primary"] {
+  background-color: var(--primary-40);
+}
+
+.dark-theme .mat-mdc-unelevated-button[color="primary"]:hover,
+.dark-theme .mat-mdc-raised-button[color="primary"]:hover {
+  background-color: var(--primary-50);
+}
+
+/* Tema claro - SECONDARY */
 .mat-mdc-unelevated-button[color="secondary"],
 .mat-mdc-raised-button[color="secondary"] {
-  background-color: var(--mat-sys-secondary) !important;
-  color: var(--mat-sys-on-secondary) !important;
+  background-color: var(--mat-sys-secondary);
+  color: var(--mat-sys-on-secondary);
 }
 
+.mat-mdc-outlined-button[color="secondary"] {
+  background-color: transparent;
+  color: var(--mat-sys-secondary);
+  border-color: var(--mat-sys-secondary);
+}
+
+.mat-mdc-button[color="secondary"] {
+  background-color: transparent;
+  color: var(--mat-sys-secondary);
+}
+
+/* Tema oscuro - SECONDARY */
+.dark-theme .mat-mdc-unelevated-button[color="secondary"],
+.dark-theme .mat-mdc-raised-button[color="secondary"] {
+  background-color: var(--secondary-40);
+}
+
+.dark-theme .mat-mdc-unelevated-button[color="secondary"]:hover,
+.dark-theme .mat-mdc-raised-button[color="secondary"]:hover {
+  background-color: var(--secondary-50);
+}
+
+/* Tema claro - TERTIARY */
 .mat-mdc-unelevated-button[color="tertiary"],
 .mat-mdc-raised-button[color="tertiary"] {
-  background-color: var(--mat-sys-tertiary) !important;
-  color: var(--mat-sys-on-tertiary) !important;
+  background-color: var(--tertiary-60);
+  color: var(--mat-sys-on-tertiary);
 }
 
-/* Para botones outlined con secondary/tertiary */
-.mat-mdc-outlined-button[color="secondary"] {
-  background-color: transparent !important;
-  color: var(--mat-sys-secondary) !important;
-  border-color: var(--mat-sys-secondary) !important;
+.mat-mdc-unelevated-button[color="tertiary"]:hover,
+.mat-mdc-raised-button[color="tertiary"]:hover {
+  background-color: var(--tertiary-65);
 }
 
 .mat-mdc-outlined-button[color="tertiary"] {
-  background-color: transparent !important;
-  color: var(--mat-sys-tertiary) !important;
-  border-color: var(--mat-sys-tertiary) !important;
-}
-
-/* Para botones text con secondary/tertiary */
-.mat-mdc-button[color="secondary"] {
-  background-color: transparent !important;
-  color: var(--mat-sys-secondary) !important;
+  background-color: transparent;
+  color: var(--mat-sys-tertiary);
+  border-color: var(--mat-sys-tertiary);
 }
 
 .mat-mdc-button[color="tertiary"] {
-  background-color: transparent !important;
-  color: var(--mat-sys-tertiary) !important;
+  background-color: transparent;
+  color: var(--mat-sys-tertiary);
+}
+
+/* Tema oscuro - TERTIARY */
+.dark-theme .mat-mdc-unelevated-button[color="tertiary"],
+.dark-theme .mat-mdc-raised-button[color="tertiary"] {
+  background-color: var(--tertiary-40);
+}
+
+.dark-theme .mat-mdc-unelevated-button[color="tertiary"]:hover,
+.dark-theme .mat-mdc-raised-button[color="tertiary"]:hover {
+  background-color: var(--tertiary-50);
+}
+
+/* En tema oscuro - texto blanco en todos los botones */
+.dark-theme .mat-mdc-unelevated-button,
+.dark-theme .mat-mdc-raised-button,
+.dark-theme .mat-mdc-flat-button,
+.dark-theme .mat-mdc-button {
+  color: #ffffff;
+}
+
+.dark-theme .mat-mdc-unelevated-button[color="primary"],
+.dark-theme .mat-mdc-raised-button[color="primary"],
+.dark-theme .mat-mdc-unelevated-button[color="secondary"],
+.dark-theme .mat-mdc-raised-button[color="secondary"],
+.dark-theme .mat-mdc-unelevated-button[color="tertiary"],
+.dark-theme .mat-mdc-raised-button[color="tertiary"] {
+  color: #ffffff;
 }

@@ -48,13 +48,13 @@ html {
   @include mat.core-theme($light-theme);
 
   // PRIMARY - Sobrescribir el valor por defecto (40 -> 70, 100 -> 10)
-  --mat-sys-primary: #{map.get(colors.$primary-palette, 70)};
+  --mat-sys-primary: #{map.get(colors.$primary-palette, 60)};
   --mat-sys-on-primary: #{map.get(colors.$primary-palette, 10)};
   --mat-sys-primary-container: #{map.get(colors.$primary-palette, 90)};
   --mat-sys-on-primary-container: #{map.get(colors.$primary-palette, 10)};
   
   // SECONDARY - Definir manualmente toda la paleta
-  --mat-sys-secondary: #{map.get(colors.$secondary-palette, 70)};
+  --mat-sys-secondary: #{map.get(colors.$secondary-palette, 60)};
   --mat-sys-on-secondary: #{map.get(colors.$secondary-palette, 10)};
   --mat-sys-secondary-container: #{map.get(colors.$secondary-palette, 90)};
   --mat-sys-on-secondary-container: #{map.get(colors.$secondary-palette, 10)};
@@ -71,6 +71,17 @@ html {
   --mat-sys-error-container: #{map.get(colors.$error-palette, 90)};
   --mat-sys-on-error-container: #{map.get(colors.$error-palette, 10)};
 
+  // SURFACE - Definir manualmente usando paleta Surface (alias de Secondary)
+  --mat-sys-surface: #{map.get(colors.$secondary-palette, 98)};
+  --mat-sys-on-surface: #{map.get(colors.$secondary-palette, 10)};
+  --mat-sys-surface-dim: #{map.get(colors.$secondary-palette, 87)};
+  --mat-sys-surface-bright: #{map.get(colors.$secondary-palette, 98)};
+  --mat-sys-surface-container-lowest: #{map.get(colors.$secondary-palette, 100)};
+  --mat-sys-surface-container-low: #{map.get(colors.$secondary-palette, 96)};
+  --mat-sys-surface-container: #{map.get(colors.$secondary-palette, 94)};
+  --mat-sys-surface-container-high: #{map.get(colors.$secondary-palette, 92)};
+  --mat-sys-surface-container-highest: #{map.get(colors.$secondary-palette, 90)};
+
 }
 
 html.dark-theme {
@@ -81,7 +92,7 @@ html.dark-theme {
   @include mat.core-theme($dark-theme);
 
   // PRIMARY para tema oscuro
-  --mat-sys-primary: #{map.get(colors.$primary-palette, 80)};
+  --mat-sys-primary: #{map.get(colors.$primary-palette, 40)};
   --mat-sys-on-primary: #{map.get(colors.$primary-palette, 20)};
   --mat-sys-primary-container: #{map.get(colors.$primary-palette, 30)};
   --mat-sys-on-primary-container: #{map.get(colors.$primary-palette, 90)};
@@ -103,6 +114,21 @@ html.dark-theme {
   --mat-sys-on-error: #{map.get(colors.$error-palette, 20)};
   --mat-sys-error-container: #{map.get(colors.$error-palette, 30)};
   --mat-sys-on-error-container: #{map.get(colors.$error-palette, 90)};
+
+  // SURFACE para tema oscuro
+  --mat-sys-surface: #{map.get(colors.$secondary-palette, 6)};
+  --mat-sys-on-surface: #{map.get(colors.$secondary-palette, 90)};
+  --mat-sys-surface-dim: #{map.get(colors.$secondary-palette, 6)};
+  --mat-sys-surface-bright: #{map.get(colors.$secondary-palette, 24)};
+  --mat-sys-surface-container-lowest: #{map.get(colors.$secondary-palette, 4)};
+  --mat-sys-surface-container-low: #{map.get(colors.$secondary-palette, 10)};
+  --mat-sys-surface-container: #{map.get(colors.$secondary-palette, 12)};
+  --mat-sys-surface-container-high: #{map.get(colors.$secondary-palette, 17)};
+  --mat-sys-surface-container-highest: #{map.get(colors.$secondary-palette, 22)};
+
+  // BACKGROUND para tema oscuro
+  --mat-sys-background: #{map.get(colors.$neutral-palette, 10)};
+  --mat-sys-on-background: #{map.get(colors.$neutral-palette, 90)};
 
   // Forzar colores de fondo para el tema oscuro
   background-color: var(--mat-sys-background);

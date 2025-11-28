@@ -12,6 +12,8 @@ interface ColorToken {
   variable: string;
   description: string;
   tone?: string;
+  toneLightTheme?: string;
+  toneDarkTheme?: string;
 }
 
 interface ColorCategory {
@@ -33,91 +35,91 @@ export class TokensComponent {
       title: 'Colores Primarios',
       icon: 'palette',
       tokens: [
-        { name: 'Primary', variable: '--mat-sys-primary', description: 'Color principal de la marca', tone: 'Primary 40. Cambiado a 60!!' },
-        { name: 'On Primary', variable: '--mat-sys-on-primary', description: 'Texto/iconos sobre primary', tone: 'Primary 100, Cambiado a 10!!' },
-        { name: 'Primary Container', variable: '--mat-sys-primary-container', description: 'Contenedor con color primario', tone: 'Primary 90' },
-        { name: 'On Primary Container', variable: '--mat-sys-on-primary-container', description: 'Texto/iconos sobre primary container', tone: 'Primary 10' },
+        { name: 'Primary', variable: '--mat-sys-primary', description: 'Color principal de la marca', toneLightTheme: 'Primary 60', toneDarkTheme: 'Primary 80' },
+        { name: 'On Primary', variable: '--mat-sys-on-primary', description: 'Texto/iconos sobre primary', toneLightTheme: 'Primary 10', toneDarkTheme: 'Primary 20' },
+        { name: 'Primary Container', variable: '--mat-sys-primary-container', description: 'Contenedor con color primario', toneLightTheme: 'Primary 90', toneDarkTheme: 'Primary 30' },
+        { name: 'On Primary Container', variable: '--mat-sys-on-primary-container', description: 'Texto/iconos sobre primary container', toneLightTheme: 'Primary 10', toneDarkTheme: 'Primary 90' },
       ]
     },
     {
       title: 'Colores Secundarios',
       icon: 'color_lens',
       tokens: [
-        { name: 'Secondary', variable: '--mat-sys-secondary', description: 'Color secundario de la marca', tone: 'Secondary 40' },
-        { name: 'On Secondary', variable: '--mat-sys-on-secondary', description: 'Texto/iconos sobre secondary', tone: 'Secondary 100' },
-        { name: 'Secondary Container', variable: '--mat-sys-secondary-container', description: 'Contenedor con color secundario', tone: 'Secondary 90' },
-        { name: 'On Secondary Container', variable: '--mat-sys-on-secondary-container', description: 'Texto/iconos sobre secondary container', tone: 'Secondary 10' },
+        { name: 'Secondary', variable: '--mat-sys-secondary', description: 'Color secundario de la marca', toneLightTheme: 'Secondary 40', toneDarkTheme: 'Secondary 80' },
+        { name: 'On Secondary', variable: '--mat-sys-on-secondary', description: 'Texto/iconos sobre secondary', toneLightTheme: 'Secondary 100', toneDarkTheme: 'Secondary 20' },
+        { name: 'Secondary Container', variable: '--mat-sys-secondary-container', description: 'Contenedor con color secundario', toneLightTheme: 'Secondary 90', toneDarkTheme: 'Secondary 30' },
+        { name: 'On Secondary Container', variable: '--mat-sys-on-secondary-container', description: 'Texto/iconos sobre secondary container', toneLightTheme: 'Secondary 10', toneDarkTheme: 'Secondary 90' },
       ]
     },
     {
       title: 'Colores Terciarios',
       icon: 'gradient',
       tokens: [
-        { name: 'Tertiary', variable: '--mat-sys-tertiary', description: 'Color terciario de la marca', tone: 'Tertiary 40' },
-        { name: 'On Tertiary', variable: '--mat-sys-on-tertiary', description: 'Texto/iconos sobre tertiary', tone: 'Tertiary 100' },
-        { name: 'Tertiary Container', variable: '--mat-sys-tertiary-container', description: 'Contenedor con color terciario', tone: 'Tertiary 90' },
-        { name: 'On Tertiary Container', variable: '--mat-sys-on-tertiary-container', description: 'Texto/iconos sobre tertiary container', tone: 'Tertiary 10' },
+        { name: 'Tertiary', variable: '--mat-sys-tertiary', description: 'Color terciario de la marca', toneLightTheme: 'Tertiary 40', toneDarkTheme: 'Tertiary 80' },
+        { name: 'On Tertiary', variable: '--mat-sys-on-tertiary', description: 'Texto/iconos sobre tertiary', toneLightTheme: 'Tertiary 100', toneDarkTheme: 'Tertiary 20' },
+        { name: 'Tertiary Container', variable: '--mat-sys-tertiary-container', description: 'Contenedor con color terciario', toneLightTheme: 'Tertiary 90', toneDarkTheme: 'Tertiary 30' },
+        { name: 'On Tertiary Container', variable: '--mat-sys-on-tertiary-container', description: 'Texto/iconos sobre tertiary container', toneLightTheme: 'Tertiary 10', toneDarkTheme: 'Tertiary 90' },
       ]
     },
     {
       title: 'Colores de Error',
       icon: 'error',
       tokens: [
-        { name: 'Error', variable: '--mat-sys-error', description: 'Color para estados de error', tone: 'Error 40' },
-        { name: 'On Error', variable: '--mat-sys-on-error', description: 'Texto/iconos sobre error', tone: 'Error 100' },
-        { name: 'Error Container', variable: '--mat-sys-error-container', description: 'Contenedor con color de error', tone: 'Error 90' },
-        { name: 'On Error Container', variable: '--mat-sys-on-error-container', description: 'Texto/iconos sobre error container', tone: 'Error 10' },
+        { name: 'Error', variable: '--mat-sys-error', description: 'Color para estados de error', toneLightTheme: 'Error 40', toneDarkTheme: 'Error 80' },
+        { name: 'On Error', variable: '--mat-sys-on-error', description: 'Texto/iconos sobre error', toneLightTheme: 'Error 100', toneDarkTheme: 'Error 20' },
+        { name: 'Error Container', variable: '--mat-sys-error-container', description: 'Contenedor con color de error', toneLightTheme: 'Error 90', toneDarkTheme: 'Error 30' },
+        { name: 'On Error Container', variable: '--mat-sys-on-error-container', description: 'Texto/iconos sobre error container', toneLightTheme: 'Error 10', toneDarkTheme: 'Error 90' },
       ]
     },
     {
       title: 'Superficies',
       icon: 'layers',
       tokens: [
-        { name: 'Surface', variable: '--mat-sys-surface', description: 'Superficie base', tone: 'Neutral 98' },
-        { name: 'On Surface', variable: '--mat-sys-on-surface', description: 'Texto/iconos sobre surface', tone: 'Neutral 10' },
-        { name: 'Surface Dim', variable: '--mat-sys-surface-dim', description: 'Superficie atenuada', tone: 'Neutral 87' },
-        { name: 'Surface Bright', variable: '--mat-sys-surface-bright', description: 'Superficie brillante', tone: 'Neutral 98' },
-        { name: 'Surface Container Lowest', variable: '--mat-sys-surface-container-lowest', description: 'Contenedor más bajo', tone: 'Neutral 100' },
-        { name: 'Surface Container Low', variable: '--mat-sys-surface-container-low', description: 'Contenedor bajo', tone: 'Neutral 96' },
-        { name: 'Surface Container', variable: '--mat-sys-surface-container', description: 'Contenedor estándar', tone: 'Neutral 94' },
-        { name: 'Surface Container High', variable: '--mat-sys-surface-container-high', description: 'Contenedor alto', tone: 'Neutral 92' },
-        { name: 'Surface Container Highest', variable: '--mat-sys-surface-container-highest', description: 'Contenedor más alto', tone: 'Neutral 90' },
+        { name: 'Surface', variable: '--mat-sys-surface', description: 'Superficie base', toneLightTheme: 'Secondary 98', toneDarkTheme: 'Secondary 6' },
+        { name: 'On Surface', variable: '--mat-sys-on-surface', description: 'Texto/iconos sobre surface', toneLightTheme: 'Secondary 10', toneDarkTheme: 'Secondary 90' },
+        { name: 'Surface Dim', variable: '--mat-sys-surface-dim', description: 'Superficie atenuada', toneLightTheme: 'Secondary 87', toneDarkTheme: 'Secondary 6' },
+        { name: 'Surface Bright', variable: '--mat-sys-surface-bright', description: 'Superficie brillante', toneLightTheme: 'Secondary 98', toneDarkTheme: 'Secondary 24' },
+        { name: 'Surface Container Lowest', variable: '--mat-sys-surface-container-lowest', description: 'Contenedor más bajo', toneLightTheme: 'Secondary 100', toneDarkTheme: 'Secondary 4' },
+        { name: 'Surface Container Low', variable: '--mat-sys-surface-container-low', description: 'Contenedor bajo', toneLightTheme: 'Secondary 96', toneDarkTheme: 'Secondary 10' },
+        { name: 'Surface Container', variable: '--mat-sys-surface-container', description: 'Contenedor estándar', toneLightTheme: 'Secondary 94', toneDarkTheme: 'Secondary 12' },
+        { name: 'Surface Container High', variable: '--mat-sys-surface-container-high', description: 'Contenedor alto', toneLightTheme: 'Secondary 92', toneDarkTheme: 'Secondary 17' },
+        { name: 'Surface Container Highest', variable: '--mat-sys-surface-container-highest', description: 'Contenedor más alto', toneLightTheme: 'Secondary 90', toneDarkTheme: 'Secondary 22' },
       ]
     },
     {
       title: 'Variantes de Superficie',
       icon: 'texture',
       tokens: [
-        { name: 'Surface Variant', variable: '--mat-sys-surface-variant', description: 'Variante de superficie', tone: 'Neutral Variant 90' },
-        { name: 'On Surface Variant', variable: '--mat-sys-on-surface-variant', description: 'Texto/iconos sobre surface variant', tone: 'Neutral Variant 30' },
-        { name: 'Surface Tint', variable: '--mat-sys-surface-tint', description: 'Tinte de superficie', tone: 'Primary 40' },
+        { name: 'Surface Variant', variable: '--mat-sys-surface-variant', description: 'Variante de superficie', toneLightTheme: 'Neutral Variant 90', toneDarkTheme: 'Neutral Variant 30' },
+        { name: 'On Surface Variant', variable: '--mat-sys-on-surface-variant', description: 'Texto/iconos sobre surface variant', toneLightTheme: 'Neutral Variant 30', toneDarkTheme: 'Neutral Variant 80' },
+        { name: 'Surface Tint', variable: '--mat-sys-surface-tint', description: 'Tinte de superficie', toneLightTheme: 'Primary 60', toneDarkTheme: 'Primary 80' },
       ]
     },
     {
       title: 'Fondos',
       icon: 'wallpaper',
       tokens: [
-        { name: 'Background', variable: '--mat-sys-background', description: 'Color de fondo principal', tone: 'Neutral 98' },
-        { name: 'On Background', variable: '--mat-sys-on-background', description: 'Texto/iconos sobre background', tone: 'Neutral 10' },
+        { name: 'Background', variable: '--mat-sys-background', description: 'Color de fondo principal', toneLightTheme: 'Neutral 98', toneDarkTheme: 'Neutral 10' },
+        { name: 'On Background', variable: '--mat-sys-on-background', description: 'Texto/iconos sobre background', toneLightTheme: 'Neutral 10', toneDarkTheme: 'Neutral 90' },
       ]
     },
     {
       title: 'Contornos y Sombras',
       icon: 'border_style',
       tokens: [
-        { name: 'Outline', variable: '--mat-sys-outline', description: 'Bordes y divisores', tone: 'Neutral Variant 50' },
-        { name: 'Outline Variant', variable: '--mat-sys-outline-variant', description: 'Variante de bordes', tone: 'Neutral Variant 80' },
-        { name: 'Shadow', variable: '--mat-sys-shadow', description: 'Color de sombras', tone: 'Neutral 0' },
-        { name: 'Scrim', variable: '--mat-sys-scrim', description: 'Overlay oscuro', tone: 'Neutral 0' },
+        { name: 'Outline', variable: '--mat-sys-outline', description: 'Bordes y divisores', toneLightTheme: 'Neutral Variant 50', toneDarkTheme: 'Neutral Variant 60' },
+        { name: 'Outline Variant', variable: '--mat-sys-outline-variant', description: 'Variante de bordes', toneLightTheme: 'Neutral Variant 80', toneDarkTheme: 'Neutral Variant 30' },
+        { name: 'Shadow', variable: '--mat-sys-shadow', description: 'Color de sombras', toneLightTheme: 'Neutral 0', toneDarkTheme: 'Neutral 0' },
+        { name: 'Scrim', variable: '--mat-sys-scrim', description: 'Overlay oscuro', toneLightTheme: 'Neutral 0', toneDarkTheme: 'Neutral 0' },
       ]
     },
     {
       title: 'Colores Inversos',
       icon: 'invert_colors',
       tokens: [
-        { name: 'Inverse Surface', variable: '--mat-sys-inverse-surface', description: 'Superficie inversa', tone: 'Neutral 20' },
-        { name: 'Inverse On Surface', variable: '--mat-sys-inverse-on-surface', description: 'Texto sobre superficie inversa', tone: 'Neutral 95' },
-        { name: 'Inverse Primary', variable: '--mat-sys-inverse-primary', description: 'Primary inverso', tone: 'Primary 80' },
+        { name: 'Inverse Surface', variable: '--mat-sys-inverse-surface', description: 'Superficie inversa', toneLightTheme: 'Neutral 20', toneDarkTheme: 'Neutral 95' },
+        { name: 'Inverse On Surface', variable: '--mat-sys-inverse-on-surface', description: 'Texto sobre superficie inversa', toneLightTheme: 'Neutral 95', toneDarkTheme: 'Neutral 20' },
+        { name: 'Inverse Primary', variable: '--mat-sys-inverse-primary', description: 'Primary inverso', toneLightTheme: 'Primary 80', toneDarkTheme: 'Primary 60' },
       ]
     }
   ];
