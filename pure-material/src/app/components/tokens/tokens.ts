@@ -6,6 +6,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from "@angular/material/icon";
 import { MatGridListModule } from '@angular/material/grid-list';
+import { ToolbarComponent } from '../toolbar/toolbar';
 
 interface ColorToken {
   name: string;
@@ -22,14 +23,42 @@ interface ColorCategory {
   tokens: ColorToken[];
 }
 
+interface ContrastLevel {
+  name: string;
+  description: string;
+  lightTone: number;
+  darkTone: number;
+}
+
 @Component({
   selector: 'app-tokens',
   standalone: true,
-  imports: [RouterLink, CommonModule, MatCardModule, MatRippleModule, MatButtonModule, MatIcon, MatGridListModule],
+  imports: [RouterLink, CommonModule, MatCardModule, MatRippleModule, MatButtonModule, MatIcon, MatGridListModule, ToolbarComponent],
   templateUrl: './tokens.html',
   styleUrl: './tokens.css'
 })
 export class TokensComponent {
+  contrastLevels: ContrastLevel[] = [
+    {
+      name: 'Estándar',
+      description: 'Contraste normal recomendado para la mayoría de casos',
+      lightTone: 40,
+      darkTone: 80
+    },
+    {
+      name: 'Medio',
+      description: 'Contraste intermedio para mejor legibilidad en algunos contextos',
+      lightTone: 50,
+      darkTone: 70
+    },
+    {
+      name: 'Alto',
+      description: 'Máximo contraste para accesibilidad y legibilidad extrema',
+      lightTone: 70,
+      darkTone: 90
+    }
+  ];
+
   colorCategories: ColorCategory[] = [
     {
       title: 'Colores Primarios',

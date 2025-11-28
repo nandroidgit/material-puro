@@ -10,6 +10,10 @@
     </button>
   </div>
 
+  <app-toolbar></app-toolbar>
+  
+  <p></p>
+
   <div class="intro-section">
     <p>
       Material Design 3 utiliza un sistema de tokens de color semánticos que se adaptan automáticamente
@@ -23,6 +27,8 @@
       <span>Haz clic en cualquier token para copiar su variable CSS</span>
     </div>
   </div>
+
+
 
 <h2>
 <span class="material-symbols-outlined">palette</span>
@@ -672,5 +678,119 @@ Tertiary
       </div>
     </section>
   }
+
+
+
+
+    <!-- SECCIÓN DE NIVELES DE CONTRASTE -->
+  <section class="contrast-levels-section">
+    <h2>
+      <span class="material-symbols-outlined">brightness_7</span>
+      Niveles de Contraste - Material 3
+    </h2>
+    <p class="contrast-description">
+      Material Design 3 ofrece 3 niveles de contraste que se adaptan a diferentes necesidades de accesibilidad.
+      Los tonos mostrados corresponden a los valores PRIMARY en tema claro y oscuro.
+    </p>
+    
+    <div class="contrast-levels-grid">
+      @for (level of contrastLevels; track level.name) {
+        <div class="contrast-card">
+          <h3>{{ level.name }}</h3>
+          <p class="contrast-info">{{ level.description }}</p>
+          
+          <div class="contrast-display">
+            <!-- LIGHT THEME -->
+            <div class="theme-sample">
+              <span class="theme-label">Tema Claro</span>
+              <div class="contrast-colors">
+                <div class="color-sample light" 
+                     [style.background-color]="'var(--primary-' + level.lightTone + ')'">
+                  <span class="tone-value">Tono {{ level.lightTone }}</span>
+                </div>
+                <div class="tone-info">
+                  PRIMARY {{ level.lightTone }}
+                </div>
+              </div>
+            </div>
+            
+            <!-- DARK THEME -->
+            <div class="theme-sample">
+              <span class="theme-label">Tema Oscuro</span>
+              <div class="contrast-colors">
+                <div class="color-sample dark" 
+                     [style.background-color]="'var(--primary-' + level.darkTone + ')'">
+                  <span class="tone-value">Tono {{ level.darkTone }}</span>
+                </div>
+                <div class="tone-info">
+                  PRIMARY {{ level.darkTone }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- TABLA COMPARATIVA -->
+    <div class="contrast-table">
+      <h3>Tabla Comparativa de Tonos por Color</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Color</th>
+            <th>Nivel Estándar</th>
+            <th>Nivel Medio</th>
+            <th>Nivel Alto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- PRIMARY -->
+          <tr>
+            <td class="color-name">
+              <span class="color-dot" style="background-color: var(--primary-60)"></span>
+              PRIMARY
+            </td>
+            <td class="light-theme">Claro: 40 / Oscuro: 80</td>
+            <td class="light-theme">Claro: 50 / Oscuro: 70</td>
+            <td class="light-theme">Claro: 70 / Oscuro: 90</td>
+          </tr>
+          <!-- SECONDARY -->
+          <tr>
+            <td class="color-name">
+              <span class="color-dot" style="background-color: var(--secondary-60)"></span>
+              SECONDARY
+            </td>
+            <td class="light-theme">Claro: 40 / Oscuro: 80</td>
+            <td class="light-theme">Claro: 50 / Oscuro: 70</td>
+            <td class="light-theme">Claro: 70 / Oscuro: 90</td>
+          </tr>
+          <!-- TERTIARY -->
+          <tr>
+            <td class="color-name">
+              <span class="color-dot" style="background-color: var(--tertiary-60)"></span>
+              TERTIARY
+            </td>
+            <td class="light-theme">Claro: 40 / Oscuro: 80</td>
+            <td class="light-theme">Claro: 50 / Oscuro: 70</td>
+            <td class="light-theme">Claro: 70 / Oscuro: 90</td>
+          </tr>
+          <!-- ERROR -->
+          <tr>
+            <td class="color-name">
+              <span class="color-dot" style="background-color: var(--error-60)"></span>
+              ERROR
+            </td>
+            <td class="light-theme">Claro: 40 / Oscuro: 80</td>
+            <td class="light-theme">Claro: 50 / Oscuro: 70</td>
+            <td class="light-theme">Claro: 70 / Oscuro: 90</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+  
 
 </div>
